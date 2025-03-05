@@ -17,5 +17,7 @@ jobs:
 
       - name: Create tag
         run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Actions"
           git tag -a v${{ github.run_number }} -m "Tag v${{ github.run_number }}"
           git push origin v${{ github.run_number }}
